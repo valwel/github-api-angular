@@ -1,0 +1,23 @@
+<div class="container mt-5" style="width: 40rem">
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      class="form-control"
+      id="floatingInput"
+      [(ngModel)]="username"
+      (keyup.enter)="onGetUser()"
+    />
+    <label for="floatingInput">Введите логин</label>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="card m-auto" *ngIf="resp">
+        <img src="{{ resp.data.avatar_url }}" class="card-img-top" />
+        <div class="card-body">
+          <div>{{ resp.data.name }}</div>
+          <a href="{{ resp.data.html_url }}">Перейти на GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
